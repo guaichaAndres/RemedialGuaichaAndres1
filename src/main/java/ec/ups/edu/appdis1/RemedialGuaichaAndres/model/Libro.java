@@ -20,7 +20,7 @@ public class Libro {
 private int libroId;
 private String tituloLibro;
 private int stock;
-
+@ManyToOne(mappedBy = "libro", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 @JoinColumn(name="cod_autor")
 private List<Autor> autor;
 @OneToOne
