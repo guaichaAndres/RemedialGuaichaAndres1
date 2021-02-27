@@ -20,9 +20,9 @@ public class Libro {
 private int libroId;
 private String tituloLibro;
 private int stock;
-@ManyToOne(mappedBy = "libro", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-@JoinColumn(name="cod_autor")
-private List<Autor> autor;
+@ManyToOne(fetch = FetchType.LAZY)
+@JoinColumn(name="autor_Id")
+private Autor autor;
 @OneToOne
 @JoinColumn(name="cod_categoria")
 private Categoria categoria; 
